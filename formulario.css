@@ -1,5 +1,26 @@
 @import url("general.css");
 .formulario{
-    background: var(--color_principal);
+    background: var(--color_secundario);
+    text-align: center;
+    max-width: 500px;
+    height: 300px;
+    width: 300px;
+    margin-top:80px;
+    border-radius: 20px;
+}
+.alineacion{
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+.text1{
+    margin-top: 50px;
+    
+}
+.text2{
+    margin-top: 50px;
+    
+}
+.fondo{
+    background: var(--color_principal);
 }

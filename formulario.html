@@ -6,13 +6,19 @@
     <title>Inscripción</title>
     <link rel="stylesheet" href="formulario.css">
 </head>
-<body>
-    <div class="formulario">
-        <form action="registro.php" method="post" id="formulario">
-            Usuario/contraseña:<br><input type="text" name="usuario" placeholder="Introduzca su usuario/Gmail"><br>
-            Contraseña:<br><input type="password" name="contrasena" placeholder="Introduzca su contraseña"><br>
-            <input type="submit" value="enviar" name="enviar"><br>
-        </form>
-    </div>
+<body class='fondo'>
+    <div class="alineacion">
+        <div class="formulario">
+            <form action="registro.php" method="post" id="formulario">
+                <div class="text1">
+                Usuario/contraseña:<br><input type="text" name="usuario"  placeholder="Introduzca su usuario/Gmail"><br>
+                </div>
+                <div class="text2">
+                Contraseña:<br><input  type="password" name="contrasena" placeholder="Introduzca su contraseña"><br>
+                </div>
+                <button type="submit" name="enviar">enviar </button><br>
+            </form>
+        </div>
+        </div>
 </body>
 </html>
