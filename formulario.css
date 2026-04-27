@@ -2,9 +2,8 @@
 .formulario{
     background: var(--color_secundario);
     text-align: center;
-    max-width: 500px;
     height: 500px;
-    width: 300px;
+    width: 325px;
     margin-top:80px;
     border-radius: 20px;
     border:black;
@@ -24,7 +23,7 @@
 }
 .campo{
     margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 90%;
     align-self: center;
     margin-right: 20px;
@@ -50,10 +49,14 @@
     
 }
 button{
-    height: 50px;
+    height: 40px;
     width: 80px;
     border-radius: 15px;
 }
 .enlaces{
-    margin-top: 50px;
+    display: flex;
+    margin-top: 20px;
+    align-items: flex-start; 
+    flex-direction: column;
+    margin-left: 30px;
 }
