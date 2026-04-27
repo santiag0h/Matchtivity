@@ -1,4 +1,4 @@
-@import url("general.css");
+@import url("../general.css");
 .formulario{
     background: var(--color_secundario);
     text-align: center;
