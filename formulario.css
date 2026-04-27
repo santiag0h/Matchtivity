@@ -1,0 +1,5 @@
+@import url("general.css");
+.formulario{
+    background: var(--color_principal);
+    align-items: center;
+}
