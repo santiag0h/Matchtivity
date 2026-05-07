@@ -1,35 +1,19 @@
 <link rel="stylesheet" href="mostrar_actividades.css">
-<?php 
-$cantidad=9;
-?>
-<script></script>
-<?php
-    $i=0;
-    echo "<div class='todo'>";
-    while($i<$cantidad){
-        $x=0;
-        echo "<div class='lineas'>";
-            while($x<3){
-                echo "<div class='actividad'>";
-                    echo "<img src='../imagenes/futbol.jpg' alt='error'>";
-                    echo "<div class='texto'>";
-                        echo "<div>";
-                            echo "Futbol";
-                        echo "</div>";
-                        echo "<div class='abajo_actividad'>";
-                            echo "<div>";
-                                echo "7 usuarios";
-                            echo "</div>";
-                            echo "<div>";
-                                echo "20 Km";
-                            echo "</div>";
-                        echo "</div>";
-                    echo "</div>";
-                echo "</div>";
-                $x++;
-                $i++;
-            }
-        echo "</div>";
-    }
-     echo "</div>";
-?>
+<div id="contenedor"></div>
+
+<script>
+var cantidad=9
+function cargarActividades(cantidad) {
+    fetch(`hacer_actividades.php?cantidad=${cantidad}`)
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("contenedor").innerHTML = html;
+        });
+}
+cargarActividades(cantidad);
+function cargarMas() {
+    cantidad += 3; // sumas más actividades
+    cargarActividades(cantidad);
+}
+</script>
+<button onclick="cargarMas(3)">cargar cargarActividades</button>
