@@ -1,6 +1,9 @@
+<?php
+    include "../header.html";
+?>
 <link rel="stylesheet" href="mostrar_actividades.css">
+<div class="cont"><button class="annadir"><img src="../imagenes/annadir.png"></img></button></div>
 <div id="contenedor"></div>
-
 <script>
 var cantidad=9
 function cargarActividades(cantidad) {
