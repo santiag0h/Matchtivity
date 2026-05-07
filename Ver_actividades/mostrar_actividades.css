@@ -11,15 +11,20 @@ body{
 .actividad{
     display:flex;
     display: block;
-    height: 225px;
-    width: 321px;
-    margin-left: 50px;
+    height: 300px;
+    width: 20%;
+    margin-left: 200px;
     margin-top: 80px;
     background: white;
     border-radius: 30px;
     flex-direction: column;
 
     
+}
+.lineas {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 .texto{
     font-size: 35px;

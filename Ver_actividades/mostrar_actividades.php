@@ -11,7 +11,7 @@ function cargarActividades(cantidad) {
         });
 }
 cargarActividades(cantidad);
-function cargarMas() {
+function cargarMas() {//hacer que se ejecute con el scroll
     cantidad += 3; // sumas más actividades
     cargarActividades(cantidad);
 }
