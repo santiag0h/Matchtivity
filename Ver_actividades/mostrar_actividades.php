@@ -5,6 +5,7 @@
 <div class="cont"><button class="annadir"><img src="../imagenes/annadir.png"></img></button></div>
 <div id="contenedor"></div>
 <script>
+
 var cantidad=9
 function cargarActividades(cantidad) {
     fetch(`hacer_actividades.php?cantidad=${cantidad}`)
@@ -14,9 +15,14 @@ function cargarActividades(cantidad) {
         });
 }
 cargarActividades(cantidad);
-function cargarMas() {//hacer que se ejecute con el scroll
-    cantidad += 3; // sumas más actividades
-    cargarActividades(cantidad);
-}
+
+var cargando = false;
+window.onscroll = function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+        if (!cargando) {
+            cantidad += 3;
+            cargarActividades(cantidad);
+        }
+    }
+};
 </script>
-<button onclick="cargarMas(3)">cargar cargarActividades</button>

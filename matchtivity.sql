@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2026 a las 19:29:31
+-- Tiempo de generación: 12-05-2026 a las 21:47:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -36,34 +36,35 @@ CREATE TABLE `actividad` (
   `minimo` int(11) NOT NULL,
   `lugar` varchar(200) NOT NULL,
   `ubicacion` varchar(255) NOT NULL,
-  `descripcion` text DEFAULT NULL
+  `descripcion` text DEFAULT NULL,
+  `Imagen` varchar(255) NOT NULL DEFAULT '../imagenes/actividad.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `actividad`
 --
 
-INSERT INTO `actividad` (`id_actividad`, `nombre`, `fecha`, `fecha_finalizacion`, `maximo`, `minimo`, `lugar`, `ubicacion`, `descripcion`) VALUES
-(1, 'Jugar futbol', '2026-03-05 19:30:00', '2026-03-31 23:00:00', 12, 3, 'calle de ejemplo', 'coordenadas google maps', 'vamos a jugar al futbol'),
-(2, 'Monopoly', '2026-04-02 20:00:00', '2026-04-15 23:00:00', 15, 3, 'Mi casa', 'coordenadas google maps', 'vamos a jugar al monopoly'),
-(3, 'Maraton de pelis', '2026-04-12 20:00:00', '2026-04-20 22:00:00', 17, 4, 'enfrente del ayuntamiento', 'coordenadas google maps', 'vamos a ver la nueva de mario'),
-(4, 'grupo de usuario', '2026-06-13 21:00:00', '2026-07-13 02:00:00', 8, 5, 'en el centro', 'coordenadas google maps', 'Texto largo de ejemplo'),
-(5, 'quedada de chill', '2026-04-12 10:00:00', '2026-04-12 15:00:00', 9, 5, 'en el parque', 'coordenadas google maps', 'vamos al parque de chill'),
-(6, 'Cena Italiana', '2026-05-01 21:00:00', '2026-05-01 23:30:00', 6, 2, 'Restaurante Luigi', 'coords', 'Cena de pasta'),
-(7, 'Senderismo', '2026-05-10 08:00:00', '2026-05-10 16:00:00', 20, 5, 'Montaña Norte', 'coords', 'Ruta de 15km'),
-(8, 'Torneo Padel', '2026-05-15 17:00:00', '2026-05-15 21:00:00', 4, 4, 'Polideportivo', 'coords', 'Padel nivel medio'),
-(9, 'Escape Room', '2026-05-20 18:00:00', '2026-05-20 20:00:00', 6, 4, 'The Box', 'coords', 'A salir a tiempo'),
-(10, 'Clase de Yoga', '2026-06-01 09:00:00', '2026-06-01 10:30:00', 15, 2, 'Gimnasio Sol', 'coords', 'Relajación'),
-(11, 'Intercambio Idiomas', '2026-06-05 19:00:00', '2026-06-05 21:00:00', 30, 5, 'Pub El Cruce', 'coords', 'English exchange'),
-(12, 'Tarde de Bolos', '2026-06-10 18:30:00', '2026-06-10 21:00:00', 10, 4, 'Bowling Center', 'coords', 'Strikes'),
-(13, 'Barbacoa Verano', '2026-07-04 13:00:00', '2026-07-04 20:00:00', 25, 8, 'Finca El Olivo', 'coords', 'Piscina y carne'),
-(14, 'Concierto Rock', '2026-07-15 22:00:00', '2026-07-16 01:00:00', 100, 10, 'Estadio', 'coords', 'Festival rock'),
-(15, 'Gaming Night', '2026-07-20 20:00:00', '2026-07-21 02:00:00', 5, 2, 'Casa de Marcos', 'coords', 'Pizzas y juegos'),
-(16, 'Visita Museo', '2026-08-05 11:00:00', '2026-08-05 14:00:00', 10, 2, 'Museo Arte', 'coords', 'Arte moderno'),
-(17, 'Karts', '2026-08-12 17:00:00', '2026-08-12 19:00:00', 8, 4, 'Karting Pro', 'coords', 'Carrera karts'),
-(18, 'Cata de Vinos', '2026-09-01 20:00:00', '2026-09-01 23:00:00', 12, 6, 'Bodega', 'coords', 'Vinos tintos'),
-(19, 'Taller Cocina', '2026-09-15 18:00:00', '2026-09-15 21:00:00', 8, 4, 'Kitchen Studio', 'coords', 'Hacer sushi'),
-(20, 'Basket 3x3', '2026-09-20 18:00:00', '2026-09-20 20:00:00', 6, 6, 'Canchas Barrio', 'coords', 'Baloncesto');
+INSERT INTO `actividad` (`id_actividad`, `nombre`, `fecha`, `fecha_finalizacion`, `maximo`, `minimo`, `lugar`, `ubicacion`, `descripcion`, `Imagen`) VALUES
+(1, 'Jugar futbol', '2026-03-05 19:30:00', '2026-03-31 23:00:00', 12, 3, 'calle de ejemplo', 'coordenadas google maps', 'vamos a jugar al futbol', '../imagenes/actividad.png'),
+(2, 'Monopoly', '2026-04-02 20:00:00', '2026-04-15 23:00:00', 15, 3, 'Mi casa', 'coordenadas google maps', 'vamos a jugar al monopoly', '../imagenes/actividad.png'),
+(3, 'Maraton de pelis', '2026-04-12 20:00:00', '2026-04-20 22:00:00', 17, 4, 'enfrente del ayuntamiento', 'coordenadas google maps', 'vamos a ver la nueva de mario', '../imagenes/actividad.png'),
+(4, 'grupo de usuario', '2026-06-13 21:00:00', '2026-07-13 02:00:00', 8, 5, 'en el centro', 'coordenadas google maps', 'Texto largo de ejemplo', '../imagenes/actividad.png'),
+(5, 'quedada de chill', '2026-04-12 10:00:00', '2026-04-12 15:00:00', 9, 5, 'en el parque', 'coordenadas google maps', 'vamos al parque de chill', '../imagenes/actividad.png'),
+(6, 'Cena Italiana', '2026-05-01 21:00:00', '2026-05-01 23:30:00', 6, 2, 'Restaurante Luigi', 'coords', 'Cena de pasta', '../imagenes/actividad.png'),
+(7, 'Senderismo', '2026-05-10 08:00:00', '2026-05-10 16:00:00', 20, 5, 'Montaña Norte', 'coords', 'Ruta de 15km', '../imagenes/actividad.png'),
+(8, 'Torneo Padel', '2026-05-15 17:00:00', '2026-05-15 21:00:00', 4, 4, 'Polideportivo', 'coords', 'Padel nivel medio', '../imagenes/actividad.png'),
+(9, 'Escape Room', '2026-05-20 18:00:00', '2026-05-20 20:00:00', 6, 4, 'The Box', 'coords', 'A salir a tiempo', '../imagenes/actividad.png'),
+(10, 'Clase de Yoga', '2026-06-01 09:00:00', '2026-06-01 10:30:00', 15, 2, 'Gimnasio Sol', 'coords', 'Relajación', '../imagenes/actividad.png'),
+(11, 'Intercambio Idiomas', '2026-06-05 19:00:00', '2026-06-05 21:00:00', 30, 5, 'Pub El Cruce', 'coords', 'English exchange', '../imagenes/actividad.png'),
+(12, 'Tarde de Bolos', '2026-06-10 18:30:00', '2026-06-10 21:00:00', 10, 4, 'Bowling Center', 'coords', 'Strikes', '../imagenes/actividad.png'),
+(13, 'Barbacoa Verano', '2026-07-04 13:00:00', '2026-07-04 20:00:00', 25, 8, 'Finca El Olivo', 'coords', 'Piscina y carne', '../imagenes/actividad.png'),
+(14, 'Concierto Rock', '2026-07-15 22:00:00', '2026-07-16 01:00:00', 100, 10, 'Estadio', 'coords', 'Festival rock', '../imagenes/actividad.png'),
+(15, 'Gaming Night', '2026-07-20 20:00:00', '2026-07-21 02:00:00', 5, 2, 'Casa de Marcos', 'coords', 'Pizzas y juegos', '../imagenes/actividad.png'),
+(16, 'Visita Museo', '2026-08-05 11:00:00', '2026-08-05 14:00:00', 10, 2, 'Museo Arte', 'coords', 'Arte moderno', '../imagenes/actividad.png'),
+(17, 'Karts', '2026-08-12 17:00:00', '2026-08-12 19:00:00', 8, 4, 'Karting Pro', 'coords', 'Carrera karts', '../imagenes/actividad.png'),
+(18, 'Cata de Vinos', '2026-09-01 20:00:00', '2026-09-01 23:00:00', 12, 6, 'Bodega', 'coords', 'Vinos tintos', '../imagenes/actividad.png'),
+(19, 'Taller Cocina', '2026-09-15 18:00:00', '2026-09-15 21:00:00', 8, 4, 'Kitchen Studio', 'coords', 'Hacer sushi', '../imagenes/actividad.png'),
+(20, 'Basket 3x3', '2026-09-20 18:00:00', '2026-09-20 20:00:00', 6, 6, 'Canchas Barrio', 'coords', 'Baloncesto', '../imagenes/actividad.png');
 
 -- --------------------------------------------------------
 
