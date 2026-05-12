@@ -1,31 +1,45 @@
 <?php
+require_once "../conexion.php";
 $cantidad = $_GET['cantidad'] ?? 9;
-    $i=0;
+try{
+    $sql = "SELECT nombre,imagen,lugar FROM actividad ORDER BY id_actividad DESC LIMIT ". $cantidad ;
+    $consulta=$conexion->prepare($sql);
+    $consulta->execute();
+    $actividades = $consulta->fetchAll(PDO::FETCH_ASSOC);
+}catch (PDOException $e) {
+    die("Error al obtener la actividades: " . $e->getMessage());
+}
+
+    
     echo "<div class='todo'>";
-    while($i<$cantidad){
+    $i=0;
+    foreach($actividades as $act){
         $x=0;
-        echo "<div class='lineas'>";
-            while($x<3){
+            if ($i % 3 == 0) {
+                echo "<div class='lineas'>";
+            }
                 echo "<div class='actividad'>";
-                    echo "<img src='../imagenes/futbol.jpg' alt='error'>";
+                    echo "<img src='".htmlspecialchars($act['imagen'])."' alt='error'>";
                     echo "<div class='texto'>";
                         echo "<div>";
-                            echo "Futbol";
+                            echo htmlspecialchars($act['nombre']);
                         echo "</div>";
                         echo "<div class='abajo_actividad'>";
                             echo "<div>";
                                 echo "7 usuarios";
                             echo "</div>";
                             echo "<div>";
-                                echo "20 Km";
+                                echo htmlspecialchars($act['lugar']);
                             echo "</div>";
                         echo "</div>";
                     echo "</div>";
                 echo "</div>";
-                $x++;
-                $i++;
+            
+            $i++;
+            if ($i % 3 == 0 || $i == count($actividades)) {
+                echo "</div>"; // Cierra .lineas
             }
-        echo "</div>";
+            
     }
      echo "</div>";
 ?>
