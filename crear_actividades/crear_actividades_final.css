@@ -1,0 +1,41 @@
+@import url("../general.css");
+body{
+    background:var(--color_principal);
+}
+.contenedor{
+    display:flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+    font-size: 50px;
+}
+.contenedor input[type="range"]{
+    width: 700px; 
+    height: 50px;
+}
+.cantidad{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    background: white;
+}
+.contenedor button{
+    width: 500px;
+    height: 150px;
+    margin-top: 50px;
+    font-size: 50px;
+}
+.cantidad h3{
+    margin: 0;
+    margin-bottom: 50px;
+}
+.flecha{
+    background: none;
+    border:none;
+}
+.flecha img{
+    width: 300px;
+    height: auto;
+    transform: scaleX(-1);
+}

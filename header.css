@@ -1,4 +1,4 @@
-@import url("../general.css");
+@import url("general.css");
 .cabecera{
     background: var(--color_secundario);
     display:flex;

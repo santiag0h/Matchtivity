@@ -2,7 +2,7 @@
     include "../header.html";
 ?>
 <link rel="stylesheet" href="mostrar_actividades.css">
-<div class="cont"><button class="annadir"><img src="../imagenes/annadir.png"></img></button></div>
+<div class="cont"><a href="../crear_actividades/crear_actividades.php" class="annadir"><img src="../imagenes/annadir.png"></img></a></div>
 <div id="contenedor"></div>
 <script>
 

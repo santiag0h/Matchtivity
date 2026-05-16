@@ -1,0 +1,97 @@
+@import url("../general.css");
+body{
+    background:var(--color_principal);
+}
+.contenedor{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    margin-top: 40px;
+}
+.campo, .campo_etiqueta {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color_secundario);
+    align-items: center;
+    margin-top: 50px;
+    padding: 15px 25px;   
+    border-radius: 30px;
+    width: 1150px;       
+}
+.contenedor input{
+    display: block;
+    height: 65px;
+    width: 700px;
+    font-size: 60px;
+    margin: 0;
+    
+    }
+.campo h3, .campo_etiqueta h3{
+    margin: 0;  
+    text-align: left;
+    width: 400px;   
+}
+.campo button{
+    margin-top: 100px;
+    height: 100px;
+    width: 250px;
+    border-radius: 20px;
+    font-size: 50px;
+}
+.foto_perfil{
+    position: relative;
+    transition: opacity 0.3s ease;
+     margin-top: 40px;
+    border-radius: 50%; 
+    object-fit: cover;
+}
+.icono{
+    position:absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 50%; 
+    height: auto; 
+    z-index: 1;
+    opacity: 0;
+}
+.foto_perfil button{
+    border: none;
+    background: none;
+    
+}
+.foto_perfil:hover img:not(.icono) {
+    opacity: 0.6;
+}
+.foto_perfil img:not(.icono) {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+.foto_perfil:hover .icono {
+    opacity: 1; 
+}
+.campo_boton {
+    align-self: flex-end;
+    
+}
+.campo_boton button {
+    background: none;
+    border: none;
+}
+.campo_boton img{
+    height:300px;
+    width: auto;
+}
+.campo textarea{
+    width: 700px;
+    height: 100px;
+}
+
+.campo_etiqueta img{
+    width: 70px;
+    height: auto;
+}
