@@ -108,7 +108,7 @@ function desconexion(){
             );
         }
             session_destroy();
-            header("Location: ../formularios/login.php");
+            header("Location: ../formularios/formulario.php");
             exit();  
 }
 ?>

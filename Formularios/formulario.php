@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="formulario.css">
 </head>
 <body class='fondo'>
+    <?php 
+    require_once "../sesiones.php";
+      reconectar();
+    if (isset($_SESSION['id'])) {
+            header("Location: ../ver_actividades/mostrar_actividades.php");
+            exit(); 
+    }?>
     <div class="alineacion">
         <div class="formulario">
             <form action="procesar_formulario.php" method="post" id="formulario">
@@ -22,7 +29,7 @@
             </form>
             <div class="enlaces">
                 <a href="correo olvidado.html">He olvidado mi contraseña</a><br>                
-                    <a  href="crear cuenta.html">No tengo cuenta</a>
+                    <a  href="crear cuenta.php">No tengo cuenta</a>
             </div>
         </div>
         

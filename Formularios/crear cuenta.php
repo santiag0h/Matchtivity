@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="crear cuenta.css">
 </head>
 <body class='fondo'>
+    <?php
+    if (isset($_SESSION['id'])) {
+            header("Location: ../ver_actividades/mostrar_actividades.php");
+            exit(); 
+    }?>
     <div class="alineacion">
         <div class="formulario">
             <form action="procesar_crear_cuenta.php" method="post" id="formulario">
@@ -27,7 +32,7 @@
                 </div>
             </form>
             <div class="enlaces">
-                    <a  href="formulario.html">Ya tengo una cuenta</a>
+                    <a  href="formulario.php">Ya tengo una cuenta</a>
             </div>
         </div>
         

@@ -37,7 +37,7 @@ try{
             
             $i++;
             if ($i % 3 == 0 || $i == count($actividades)) {
-                echo "</div>"; // Cierra .lineas
+                echo "</div>"; 
             }
             
     }
