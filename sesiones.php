@@ -108,7 +108,7 @@ function desconexion(){
             );
         }
             session_destroy();
-            header("Location: ../registro/login.php");
+            header("Location: ../formularios/login.php");
             exit();  
 }
 ?>

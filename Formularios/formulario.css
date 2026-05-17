@@ -3,10 +3,10 @@
     background: var(--color_secundario);
     border: 1px solid black;
     text-align: center;
-    height: 500px;
-    width: 325px;
+    font-size: 30px;
     margin-top:80px;
     border-radius: 20px;
+    padding: 20px;
 }
 .alineacion{
     display: flex;
@@ -28,8 +28,11 @@
     align-self: center;
     margin-right: 20px;
     height: 30px;
+    width: 400px;
+    height: 50px;
     
 }
+
 .text2{
     display: flex;
     margin-top: 50px;
@@ -49,8 +52,8 @@
     
 }
 button{
-    height: 40px;
-    width: 80px;
+    height: 70px;
+    width: 150px;
     border-radius: 15px;
 }
 .enlaces{
