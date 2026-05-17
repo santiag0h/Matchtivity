@@ -50,7 +50,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 }
             }
         } catch (PDOException $e) {
-            // Si falla la búsqueda, es mejor detener el script para no perder el control de los archivos
             die("Error al gestionar la foto anterior: " . $e->getMessage());
         }
         if(!move_uploaded_file($fotoTmp, $rutaDestino)){
@@ -61,6 +60,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     try{
         if($nombreFotoBD !== null) {
+            $check = $conexion->prepare("SELECT id_usuario FROM usuario WHERE nombre = :usuario OR correo = :correo LIMIT 1");
+            $check->execute([
+                'usuario' => $nombre,
+                'correo' => $correo
+            ]);
+            
+            if($check->fetch()){
+                die("Error: El nombre de usuario o el correo ya están registrados");
+            }
             $consulta = "UPDATE usuario SET nombre = :nombre, correo = :correo, foto = :foto WHERE id_usuario = :id";
             $parametros = [
                 'nombre' => $nombre,
@@ -69,6 +77,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 'id'     => $_SESSION['id']
             ];
         } else {
+            $check = $conexion->prepare("SELECT id_usuario FROM usuario WHERE nombre = :usuario OR correo = :correo LIMIT 1");
+            $check->execute([
+                'usuario' => $nombre,
+                'correo' => $correo
+            ]);
+            
+            if($check->fetch()){
+                die("Error: El nombre de usuario o el correo ya están registrados");
+            }
             $consulta = "UPDATE usuario SET nombre = :nombre, correo = :correo WHERE id_usuario = :id";
             $parametros = [
                 'nombre' => $nombre,
