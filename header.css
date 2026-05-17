@@ -55,3 +55,40 @@ header {
 .buscador input{
     width: 300px;
 }
+.contenedor-usuario {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-desplegable {
+    display: none;
+    position: absolute;
+    top: 85%; 
+    right: 0;  
+    background-color: #D9D9D9; 
+    min-width: 180px;
+    border: 1px solid black;
+    
+}
+
+
+.opcion-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 20px;
+    border-bottom: 1px solid #b5b5b5; /* Línea divisoria suave */
+}
+.contenedor-usuario:hover .menu-desplegable {
+    display: block;
+}
+
+
+.opcion-menu img {
+    width: 20px;
+    height: 20px;
+}
