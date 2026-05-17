@@ -60,10 +60,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     try{
         if($nombreFotoBD !== null) {
-            $check = $conexion->prepare("SELECT id_usuario FROM usuario WHERE nombre = :usuario OR correo = :correo LIMIT 1");
+            $check = $conexion->prepare("SELECT id_usuario FROM usuario WHERE (nombre = :usuario OR correo = :correo) AND id_usuario != :id LIMIT 1");
             $check->execute([
                 'usuario' => $nombre,
-                'correo' => $correo
+                'correo' => $correo,
+                'id'=> $_SESSION['id']
             ]);
             
             if($check->fetch()){
@@ -77,10 +78,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 'id'     => $_SESSION['id']
             ];
         } else {
-            $check = $conexion->prepare("SELECT id_usuario FROM usuario WHERE nombre = :usuario OR correo = :correo LIMIT 1");
+            $check = $conexion->prepare("SELECT id_usuario FROM usuario WHERE (nombre = :usuario OR correo = :correo) AND id_usuario != :id LIMIT 1");
             $check->execute([
                 'usuario' => $nombre,
-                'correo' => $correo
+                'correo' => $correo,
+                'id'=> $_SESSION['id']
             ]);
             
             if($check->fetch()){
