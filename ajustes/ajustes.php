@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +10,6 @@
     
     <?php 
     include "../header.html";
-    
     ?>
     <form action="procesar_ajustes.php" method="post" id="formulario" enctype="multipart/form-data">
             <div class="contenedor">
@@ -20,10 +18,10 @@
                     <img class="foto_user" id="foto" src="../imagenes/usuario.png" alt="error">
                     <img class="icono" src="../imagenes/camara.png">
                 </label>
-                <input type="file" id="input-foto" name="foto_perfil" accept="image/*" style="display: none;">
+                <input type="file" id="input-foto" name="foto" accept="image/*" style="display: none;">
             </div>
-            <div class="campo"><h3>Nombre:</h3><input id="nombre" type="text"></div>
-            <div class="campo"><h3>Contraseña:</h3><input type="password" value="ejemplo de texto"></div>
+            <div class="campo"><h3>Nombre:</h3><input id="nombre" name="nombre" type="text"></div>
+            <div class="campo"><h3>Correo:</h3><input id="correo" name="correo" type="text"></div>
             <div class="campo"><button type="submit">Guardar</button></div> 
         </div>
     </form>
@@ -37,6 +35,7 @@
         .then(data => {
             if(data.status=="ok"){
                 document.getElementById("nombre").value=data.nombre
+                document.getElementById("correo").value=data.correo
                 document.getElementById("foto").src=data.foto
                 } else if (data.code == 'NO_SESSION') {
                     alert('Ha ocurrido un error. Volviendo al inicio...');
@@ -48,6 +47,18 @@
            
     }
     document.addEventListener("DOMContentLoaded", mostrar);
+
+    document.getElementById('input-foto').addEventListener('change', function(evento) {
+        const archivo = evento.target.files[0];
+        
+        if (archivo) {
+            const lector = new FileReader();//mostrar imagen antes de guardar
+            lector.onload = function(e) {
+                document.getElementById('foto').src = e.target.result;
+            }
+            lector.readAsDataURL(archivo);
+        }
+    });
     </script>
 </body>
 </html>

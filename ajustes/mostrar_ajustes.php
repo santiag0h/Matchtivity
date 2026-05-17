@@ -1,6 +1,7 @@
 <?php
 include "../sesiones.php";
     reconectar();
+
     if (!isset($_SESSION['id'])) {
         echo json_encode(['status' => 'error', 'code' => 'NO_SESSION']);
         exit(); 
@@ -8,7 +9,7 @@ include "../sesiones.php";
     $idUsuario = $_SESSION['id'];
     try{
         global $conexion;
-        $sql = "SELECT nombre, foto FROM usuario WHERE id_usuario = :id LIMIT 1";
+        $sql = "SELECT nombre,correo, foto FROM usuario WHERE id_usuario = :id LIMIT 1";
         $consulta = $conexion->prepare($sql);
         $consulta->execute(['id' => $idUsuario]);
         $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
@@ -16,6 +17,7 @@ include "../sesiones.php";
             echo json_encode([
             'status' => 'ok',
             'nombre' => $usuario['nombre'],
+            'correo' => $usuario['correo'],
             'foto'   => $usuario['foto']
         ]);
         }else {
